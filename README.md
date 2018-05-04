@@ -25,7 +25,8 @@ For linux user, please follow the instructions on https://github.com/nltk/nltk/w
 ## How to Run
 ### MaxEnt Algorithm
 1. Go to maxent
-2. Execute `python maxent.py`
+2. Execute `python pos_tagger.py`
+3. Use `python pos_tagger.py --help` to see available options for feature_function_fn
 
 ## Deep Learning Algorithm
 1. Go to deep-learning
