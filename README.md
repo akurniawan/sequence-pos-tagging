@@ -7,7 +7,14 @@ The data is for Indonesian corpus that can be accessed and downloaded at https:/
 
 ## How to Install
 All of these experiments was done in python 3.6.
-Install the dependencies from requirements.txt
+Install the dependencies:
+1. pytorch==0.4.0
+2. nltk==3.2.5
+3. git+https://github.com/pytorch/text#egg=torchtext
+4. git+https://github.com/pytorch/ignite.git#egg=ignite
+5. numpy==1.14.3
+6. sklearn==0.19.1
+7. pytorch-crf==0.5.0
 
 For mac user, follow these steps to install megam as one of the requirements for running the maxent algorithm
 1. brew tap brewsci/science
