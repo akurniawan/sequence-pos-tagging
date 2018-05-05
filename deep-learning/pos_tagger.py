@@ -18,7 +18,7 @@ HIDDEN_SIZE = 512
 MAX_EPOCHS = 2
 LAYER_SIZE = 1
 EMBEDDING_SIZE = 300
-LEARNING_RATE = 0.01
+LEARNING_RATE = 0.001
 
 if __name__ == '__main__':
     # Dataset
@@ -35,7 +35,7 @@ if __name__ == '__main__':
         format="csv",
         skip_header=True,
         fields=[("sentence", sentence), ("tags", tags)])
-    tags.build_vocab(train_dataset.tags)
+    tags.build_vocab(train_dataset.tags, min_size=5)
     sentence.build_vocab(train_dataset.sentence)
 
     train_iter = data.BucketIterator(
@@ -52,9 +52,6 @@ if __name__ == '__main__':
         shuffle=True,
         sort_key=lambda x: len(x.sentence),
         sort_within_batch=True)
-
-    tags.build_vocab(train_dataset.tags)
-    sentence.build_vocab(train_dataset.sentence)
 
     # Net initialization
     embedding = nn.Embedding(len(sentence.vocab), EMBEDDING_SIZE, 1)
